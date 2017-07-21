@@ -1,8 +1,8 @@
 # vue-pomodoro
 
-> a pomodoro clock component with vue
+> A pomodoro clock component with Vue.js
 # Demo
-https://xiongzixiao.github.io/vue-pomodoro/index.html
+http://xiongzixiao.com/vue-pomodoro/
 # Requirements
 Vue.js (^2.0)
 # Install
@@ -57,5 +57,7 @@ npm run dev
 # build for production with minification
 npm run build
 ```
-#License
+
+# License
+
 [The MIT License](LICENSE)
