@@ -7,7 +7,7 @@ http://xiongzixiao.com/vue-pomodoro/
 # Requirements
 Vue.js (^2.0)
 # Install
-npm install xxx
+npm install vue-pomodoro --save
 # Usage
 ```
 <template>
