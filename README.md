@@ -15,6 +15,7 @@ npm install xxx
             :diameter = "diameter">
   </Pomodoro>
 </template>
+
 <script>
 import Pomodoro from 'vue-pomodoro'
 
@@ -42,7 +43,7 @@ Name | Default value | Description
 `stopColor` | `#99CCCC` | The secondary color of the pomodoro clock gradient.
 `innerStrokeColor` | `#0099CC` | Background color of the pomodoro clock.
 `strokeWidth` | `10` | The width of the pomodoro clock.
-`innerTextColor` | `#FF6666` | Text color of inner text.
+`innerTextColor` | `#FF6666` | Text color of the inner text.
 `diameter` | `300` | Diameter of the pomodoro clock in pixels.
 # Build Setup
 
@@ -56,3 +57,5 @@ npm run dev
 # build for production with minification
 npm run build
 ```
+#License
+[The MIT License](LICENSE)
