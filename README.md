@@ -1,8 +1,50 @@
 # vue-pomodoro
 
-> a pomodoro clock with vue
+> a pomodoro clock component with vue
+# Demo
+https://xiongzixiao.github.io/vue-pomodoro/index.html
+# Requirements
+Vue.js (^2.0)
+# Install
+npm install xxx
+# Usage
+```
+<template>
+  <Pomodoro :total-pomodoro = "totalPomodoro"
+            :work-duration = "25"
+            :diameter = "diameter">
+  </Pomodoro>
+</template>
+<script>
+import Pomodoro from 'vue-pomodoro'
 
-## Build Setup
+export default {
+  data () {
+    return {
+      diameter: 300
+      totalPomodoro: 4
+    }
+  },
+
+  components: {
+    Pomodoro
+  }
+}
+</script>
+```
+# Props
+Name | Default value | Description
+---|:---:|---
+`totalPomodoro` | `4` | The pomodoro clock required to complete the task.
+`workDuration` | `25` | A Pomodoro clock working time(minutes).
+`restDuration` | `5` | A Pomodoro clock rest time(minutes).
+`startColor` | `#CCFFFF` | The color of the leading edge of the pomodoro clock gradient.
+`stopColor` | `#99CCCC` | The secondary color of the pomodoro clock gradient.
+`innerStrokeColor` | `#0099CC` | Background color of the pomodoro clock.
+`strokeWidth` | `10` | The width of the pomodoro clock.
+`innerTextColor` | `#FF6666` | Text color of inner text.
+`diameter` | `300` | Diameter of the pomodoro clock in pixels.
+# Build Setup
 
 ``` bash
 # install dependencies
@@ -14,5 +56,3 @@ npm run dev
 # build for production with minification
 npm run build
 ```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).

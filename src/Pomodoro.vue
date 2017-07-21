@@ -94,7 +94,7 @@ export default {
     startColor: {
       type: String,
       required: false,
-      default: '#87CEEB'
+      default: '#CCFFFF'
     },
     innerTextColor: {
       type: String,
@@ -104,7 +104,7 @@ export default {
     stopColor: {
       type: String,
       required: false,
-      default: '#4682B4'
+      default: '#99CCCC'
     },
     strokeWidth: {
       type: Number,
@@ -114,7 +114,7 @@ export default {
     innerStrokeColor: {
       type: String,
       required: false,
-      default: 'rgba(135,206,235,.1)'
+      default: '#0099CC'
     }
   },
 
