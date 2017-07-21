@@ -1,6 +1,7 @@
 # vue-pomodoro
 
 > A pomodoro clock component with Vue.js
+> Based on the component of vue-radial-progress: https://github.com/wyzant-dev/vue-radial-progress 
 # Demo
 http://xiongzixiao.com/vue-pomodoro/
 # Requirements
