@@ -1,6 +1,7 @@
 # vue-pomodoro
 
 > A pomodoro clock component with Vue.js
+Based on the component of [vue-radial-progress](https://github.com/wyzant-dev/vue-radial-progress)
 # Demo
 http://xiongzixiao.com/vue-pomodoro/
 # Requirements
@@ -45,18 +46,6 @@ Name | Default value | Description
 `strokeWidth` | `10` | The width of the pomodoro clock.
 `innerTextColor` | `#FF6666` | Text color of the inner text.
 `diameter` | `300` | Diameter of the pomodoro clock in pixels.
-# Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-```
 
 # License
 
