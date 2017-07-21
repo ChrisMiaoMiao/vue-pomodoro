@@ -84,12 +84,12 @@ export default {
     workDuration: {
       type: Number,
       required: false,
-      default: 1
+      default: 25
     },
     restDuration: {
       type: Number,
       required: false,
-      default: 0.5
+      default: 5
     },
     startColor: {
       type: String,
