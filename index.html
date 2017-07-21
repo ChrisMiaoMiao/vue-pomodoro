@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Vue Pomodoro Clock Demo</title>
+    <style>
+      html, body {
+        background: #cccccc;
+        text-align: center;
+        color: #4e4f4f;
+        font-size: 16px;
+        margin: 0;
+      }
+      header {
+        background-color:#0099CC;
+        padding:10px 0px;
+      }
+      #app {
+        display: flex;
+        flex-direction: row;
+        margin-top: 50px;
+      }
+      .pomodoro-display {
+        margin: 20px auto;
+      }
+      .pomodoro-display-controls {
+        padding:40px;
+        margin: auto;
+      }
+      input {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      label {
+        margin-right: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Pomodoro Clock Demo</h1>
+      <div class="logo">
+        <a class="github-button" href="https://github.com/xiongzixiao/"><svg xmlns="http://www.w3.org/2000/svg" fill="white" width="32" height="32" viewBox="0 0 16 16"><path d="M8 .198c-4.418 0-8 3.582-8 8 0 3.535 2.292 6.533 5.47 7.59.4.075.548-.173.548-.384 0-.19-.008-.82-.01-1.49-2.227.485-2.696-.943-2.696-.943-.364-.924-.888-1.17-.888-1.17-.726-.497.055-.486.055-.486.802.056 1.225.824 1.225.824.714 1.223 1.872.87 2.328.665.072-.517.28-.87.508-1.07-1.776-.202-3.644-.888-3.644-3.954 0-.874.313-1.588.824-2.148-.083-.202-.357-1.015.077-2.117 0 0 .672-.215 2.2.82.64-.177 1.323-.266 2.003-.27.68.004 1.365.093 2.004.27 1.527-1.035 2.198-.82 2.198-.82.435 1.102.162 1.916.08 2.117.512.56.822 1.274.822 2.147 0 3.072-1.872 3.748-3.653 3.946.288.248.544.735.544 1.48 0 1.07-.01 1.933-.01 2.196 0 .213.145.462.55.384 3.178-1.06 5.467-4.057 5.467-7.59 0-4.418-3.58-8-8-8z"></path></svg></a>
+      </div>
+    </header>
+    <div id="app">
+      <table class="pomodoro-display-controls">
+        <tr>
+          <td>
+            <label for="total-pomodoro">Total Pomodoro</label>
+          </td>
+          <td>
+            <input id="total-pomodoro" type="number" min="1" max="10" placeholder="Total pomodoro" :value="totalPomodoro" @input="totalPomodoroChanged">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="work-duration">Work Duration</label>
+          </td>
+          <td>
+            <input id="work-duration" type="number" min="0" placeholder="Work Duration" :value="workDuration" @input="workDurationChanged">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="rest-duration">Rest Duration</label>
+          </td>
+          <td>
+            <input id="rest-duration" type="number" min="0" placeholder="Rest Duration" :value="restDuration" @input="restDurationChanged">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="diameter">Diameter</label>
+          </td>
+          <td>
+            <input id="diameter" type="number" min="0" placeholder="Diameter" :value="diameter" @input="diameterChanged">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="stroke-width">Stoke width</label>
+          </td>
+          <td>
+            <input id="stroke-width" type="number" min="0" placeholder="Stroke width" :value="strokeWidth" @input="strokeWidthChanged">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="start-color">Start color</label>
+          </td>
+          <td>
+            <input id="start-color" type="color" placeholder="Start color" :value="startColor" @input="startColorChanged">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="stop-color">Stop color</label>
+          </td>
+          <td>
+            <input id="stop-color" type="color" placeholder="Stop color" :value="stopColor" @input="stopColorChanged">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="inner-stroke-color">Inner stroke color</label>
+          </td>
+          <td>
+            <input id="inner-stroke-color" type="color" placeholder="Inner stroke color" :value="innerStrokeColor" @input="innerStrokeColorChanged">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="inner-text-color">Inner text color</label>
+          </td>
+          <td>
+            <input id="inner-text-color" type="color" placeholder="Inner text color" :value="innerTextColor" @input="innerTextColorChanged">
+          </td>
+        </tr>
+      </table>
+      <div class="pomodoro-display">
+        <Pomodoro :total-pomodoro = "totalPomodoro"
+                  :work-duration = "workDuration"
+                  :rest-duration = "restDuration"
+                  :diameter = "diameter"
+                  :start-color = "startColor"
+                  :stop-color = "stopColor"
+                  :inner-text-color = "innerTextColor"
+                  :stroke-width = "strokeWidth"
+                  :inner-stroke-color = "innerStrokeColor">
+        </Pomodoro>
+      </div>
+    </div>
+  <script src="https://unpkg.com/vue@2.4.1" charset="utf-8"></script>
+    <script src="./dist/Pomodoro.min.js"></script>
+
+    <script>
+      Vue.config.debug = true
+      new Vue({
+        el: '#app',
+        components: {
+          Pomodoro: Pomodoro.default
+        },
+        data () {
+          return {
+            totalPomodoro: 4,
+            workDuration: 25,
+            restDuration: 5,
+            startColor: '#CCFFFF',
+            stopColor: '#99CCCC',
+            strokeWidth: 10,
+            innerStrokeColor: '#0099CC',
+            innerTextColor: '#FF6666',
+            diameter: 400
+          }
+        },
+        methods: {
+          totalPomodoroChanged (e) {
+            e.preventDefault()
+            const val = e.target.value
+            if (!val) {
+              return false
+            }
+            this.totalPomodoro = parseInt(val)
+          },
+          workDurationChanged (e) {
+            e.preventDefault()
+            const val = e.target.value
+            if (!val) {
+              return false
+            }
+            this.workDuration = parseInt(val)
+          },
+          restDurationChanged (e) {
+            e.preventDefault()
+            const val = e.target.value
+            if (!val) {
+              return false
+            }
+            this.restDuration = parseInt(val)
+          },
+          diameterChanged (e) {
+            e.preventDefault()
+            const val = e.target.value
+            if (!val) {
+              return false
+            }
+            this.diameter = parseInt(val)
+          },
+          innerTextColorChanged(e) {
+            this.innerTextColor = e.target.value
+          },
+          innerStrokeColorChanged (e) {
+            this.innerStrokeColor = e.target.value
+          },
+          stopColorChanged (e) {
+            this.stopColor = e.target.value
+          },
+          startColorChanged (e) {
+            this.startColor = e.target.value
+          },
+          strokeWidthChanged (e) {
+            e.preventDefault()
+            const val = e.target.value
+            if (!val || isNaN(val)) {
+              return false
+            }
+            this.strokeWidth = parseInt(val)
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
